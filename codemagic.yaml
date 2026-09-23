@@ -4,9 +4,12 @@ workflows:
     max_build_duration: 30
     environment:
       flutter: stable
+      java: 17
     scripts:
       - name: Get dependencies
         script: flutter pub get
+      - name: Clean build cache
+        script: flutter clean
       - name: Build APK
         script: flutter build apk --release
     artifacts:
